@@ -1,5 +1,5 @@
-TypicalBot Commander
-====================
+Commander
+=========
 
 [![Discord](https://discordapp.com/api/guilds/163038706117115906/embed.png?style=shield)](https://discord.gg/typicalbot)
 [![Travis](https://travis-ci.org/typicalbot/commander.svg?branch=master)](https://travis-ci.org/typicalbot/commander)
