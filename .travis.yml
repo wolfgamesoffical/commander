@@ -1,0 +1,12 @@
+language: java
+jdk:
+  - oraclejdk8
+
+install: true
+sudo: required
+script: ./gradlew clean build --stacktrace
+
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.gradle

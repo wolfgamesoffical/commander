@@ -1,0 +1,80 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.8.4'
+    id 'com.github.johnrengelman.shadow' version '4.0.2'
+}
+
+// Semantic Versioning 2.0.0
+def versionObject = new Version(major: 1, minor: 0, patch: 0)
+
+group 'com.typicalbot.commander'
+version versionObject.toString()
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+artifacts {
+    archives shadowJar
+}
+
+jar {
+    classifier = "nodeps"
+}
+
+shadowJar {
+    classifier = ""
+}
+
+publishing {
+    publications {
+        CommanderRelease(MavenPublication) {
+            from components.java
+            groupId 'com.typicalbot.commander'
+            artifactId 'commander'
+            version version
+        }
+    }
+}
+
+bintray {
+    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    publications = ['CommanderRelease']
+
+    pkg {
+        repo = 'maven'
+        name = 'commander'
+        userOrg = 'typicalbot'
+        licenses = ['MIT']
+        vcsUrl = 'https://github.com/typicalbot/commander.git'
+        publish = true
+        version {
+            name = project.version
+            released = new Date()
+        }
+    }
+}
+
+build.dependsOn shadowJar
+
+class Version {
+    String major, minor, patch
+
+    String toString() {
+        return "${major}.${minor}.${patch}"
+    }
+}
