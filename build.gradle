@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'maven-publish'
     id 'com.jfrog.bintray' version '1.8.4'
-    id 'com.github.johnrengelman.shadow' version '4.0.2'
 }
 
 // Semantic Versioning 2.0.0
@@ -27,16 +26,9 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-artifacts {
-    archives shadowJar
-}
-
 jar {
-    classifier = "nodeps"
-}
-
-shadowJar {
-    classifier = ""
+    baseName = project.name
+    manifest.attributes 'Implementation-Version': version
 }
 
 publishing {
@@ -68,8 +60,6 @@ bintray {
         }
     }
 }
-
-build.dependsOn shadowJar
 
 class Version {
     String major, minor, patch
