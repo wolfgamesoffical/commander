@@ -31,5 +31,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.PARAMETER)
 public @interface Autocomplete {
+    /**
+     * Allows autocompletion of an command based on similarity between user input and system-generated input.
+     *
+     * @return An autocompletion value
+     */
     String value();
 }

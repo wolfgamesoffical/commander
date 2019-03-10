@@ -31,5 +31,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.PARAMETER})
 public @interface Default {
+    /**
+     * Indicates whether a command (method) is the base, or if a argument (parameter) has a default value.
+     *
+     * @return Default command or default value for argument.
+     */
     String value() default "";
 }

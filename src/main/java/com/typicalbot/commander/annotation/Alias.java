@@ -31,5 +31,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
 public @interface Alias {
+    /**
+     * Provides single or several alias(es) by splitting each alias by using the `|` character.
+     *
+     * @return A list of aliases.
+     */
     String value();
 }

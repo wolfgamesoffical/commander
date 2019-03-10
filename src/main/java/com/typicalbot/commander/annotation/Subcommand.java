@@ -31,5 +31,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
 public @interface Subcommand {
+    /**
+     * Defines the subcommand.
+     *
+     * @return A subcommand name.
+     */
     String value();
 }

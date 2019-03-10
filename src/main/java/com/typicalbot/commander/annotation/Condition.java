@@ -31,5 +31,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.PARAMETER, ElementType.TYPE})
 public @interface Condition {
+    /**
+     * Specific condition that must be validated before executing a command.
+     *
+     * @return A condition
+     */
     String value();
 }
