@@ -19,6 +19,9 @@ repositories {
 }
 
 dependencies {
+    // JDA
+    api group: 'net.dv8tion', name: 'JDA', version: '3.8.3_461'
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
