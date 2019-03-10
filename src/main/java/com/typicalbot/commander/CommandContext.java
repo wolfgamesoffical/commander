@@ -21,19 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.typicalbot.commander.context;
+package com.typicalbot.commander;
 
-/**
- * @since 1.0.0
- */
-public class CommandContext<S> {
-    private final S source;
-
-    public CommandContext(S source) {
-        this.source = source;
-    }
-
-    public S getSource() {
-        return this.source;
-    }
+public class CommandContext {
 }

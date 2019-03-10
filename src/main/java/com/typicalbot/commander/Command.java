@@ -23,11 +23,8 @@
  */
 package com.typicalbot.commander;
 
-import com.typicalbot.commander.context.CommandContext;
-
 /**
  * @since 1.0.0
  */
-public interface Command<S> {
-    void execute(CommandContext<S> context);
+public abstract class Command {
 }
