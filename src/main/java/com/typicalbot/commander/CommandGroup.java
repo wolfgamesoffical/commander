@@ -23,6 +23,9 @@
  */
 package com.typicalbot.commander;
 
+/**
+ * @since 1.0.0
+ */
 public enum CommandGroup {
     GUILD_MEMBER,
     GUILD_MODERATOR,

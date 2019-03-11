@@ -30,6 +30,8 @@ import java.lang.annotation.Target;
 
 /**
  * Indicates that the command or subcommand is private and shouldn't be shown on the command list or usages.
+ *
+ * @since 1.0.0
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
