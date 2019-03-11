@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Nicholas Sylke and Bryan Pikaard.
+ * Copyright (c) 2019 Bryan Pikaard, Nicholas Sylke and the TypicalBot contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
