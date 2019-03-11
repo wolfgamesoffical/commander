@@ -9,10 +9,10 @@ plugins {
     id("org.jetbrains.gradle.plugin.idea-ext") version "0.5"
 }
 
-val versionObject = Version(major="1", minor="0", patch="0")
+val versionObject = Version(major = "1", minor = "0", patch = "0")
 
 project.group = "com.typicalbot.commander"
-project.version = versionObject
+project.version = "$versionObject"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
